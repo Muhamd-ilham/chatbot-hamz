@@ -3,42 +3,29 @@
   --botColor: #34a853;
   --glassBg: rgba(255, 255, 255, 0.15);
   --border: rgba(255, 255, 255, 0.2);
+  --textColor: #333;
+  --bgColor: #f0f2f5;
+  --white: #fff;
 }
 
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #f0f2f5;
- 
-}
-
-
-.message {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  background: var(--bgColor);
 }
 
 .chatbox {
   max-width: 600px;
-  margin: 20px auto;
   height: 500px;
-  background: #fff;
+  margin: 20px auto;
+  background: var(--white);
   border-radius: 20px;
   overflow-y: auto;
   padding: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
-  
+  display: flex;
+  flex-direction: column;
 }
 
 .message {
@@ -52,20 +39,19 @@ body {
 }
 
 .user {
-  background: none;
-  color: black;
-  text-align: right;
+  background: var(--primaryColor);
+  color: white;
   align-self: flex-end;
-  margin-left: auto;
-  border: none;
-  padding: 0;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 16px;
 }
 
-
 .bot {
-  color: black;
-  margin-right: auto;
+  background: var(--botColor);
+  color: white;
+  align-self: flex-start;
   border-bottom-left-radius: 4px;
+  border-top-right-radius: 16px;
 }
 
 .chat-footer {
@@ -78,10 +64,10 @@ body {
   transform: translateX(-50%);
   width: calc(100% - 2rem);
   max-width: 600px;
-  backdrop-filter: blur(10px);
   background: var(--glassBg);
   border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
@@ -89,9 +75,10 @@ body {
   flex: 1;
   padding: 12px 18px;
   border-radius: 30px;
-  background: white;
+  background: var(--white);
   font-size: 1em;
   outline: none;
+  border: 1px solid transparent;
   transition: border 0.3s ease;
 }
 
@@ -103,7 +90,7 @@ body {
   width: 45px;
   height: 45px;
   background: var(--primaryColor);
-  color: black;
+  color: white;
   border: none;
   border-radius: 50%;
   display: flex;
@@ -114,7 +101,7 @@ body {
 }
 
 .sendBtn:hover {
-  background: #black;
+  background: #155ab6;
 }
 
 button, .btn-primary, .btn-disabled, .btn-error {
@@ -138,6 +125,12 @@ button, .btn-primary, .btn-disabled, .btn-error {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
