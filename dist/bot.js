@@ -1,3 +1,5 @@
+//Chatbot by Ilhamz
+
 function bloggerGemini({ elementContainer, config }) {
   const apiKey = config.apiKey;
   const container = document.querySelector(elementContainer);
